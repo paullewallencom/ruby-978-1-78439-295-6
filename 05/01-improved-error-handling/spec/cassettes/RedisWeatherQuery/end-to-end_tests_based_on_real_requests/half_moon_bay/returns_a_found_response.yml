@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?q=half%20moon%20bay
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 14 Jul 2015 09:00:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Source:
+      - back
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: |
+        {"coord":{"lon":-122.43,"lat":37.46},"weather":[{"id":701,"main":"Mist","description":"mist","icon":"50n"}],"base":"cmc stations","main":{"temp":289.43,"pressure":1015,"humidity":93,"temp_min":287.59,"temp_max":291.15},"wind":{"speed":6.2,"deg":330,"gust":9.3},"clouds":{"all":90},"dt":1436863932,"sys":{"type":1,"id":392,"message":0.0125,"country":"US","sunrise":1436878809,"sunset":1436931046},"id":5354943,"name":"Half Moon Bay","cod":200}
+    http_version: 
+  recorded_at: Tue, 14 Jul 2015 09:00:55 GMT
+recorded_with: VCR 2.9.3

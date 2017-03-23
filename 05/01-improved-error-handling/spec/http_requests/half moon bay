@@ -1,0 +1,42 @@
+{
+  "coord": {
+    "lon": -122.43,
+    "lat": 37.46
+  },
+  "weather": [
+    {
+      "id": 701,
+      "main": "Mist",
+      "description": "mist",
+      "icon": "50n"
+    }
+  ],
+  "base": "cmc stations",
+  "main": {
+    "temp": 291.22,
+    "pressure": 1015,
+    "humidity": 88,
+    "temp_min": 288.15,
+    "temp_max": 293.75
+  },
+  "wind": {
+    "speed": 5.7,
+    "deg": 320,
+    "gust": 8.7
+  },
+  "clouds": {
+    "all": 90
+  },
+  "dt": 1436851766,
+  "sys": {
+    "type": 1,
+    "id": 392,
+    "message": 0.0072,
+    "country": "US",
+    "sunrise": 1436878803,
+    "sunset": 1436931050
+  },
+  "id": 5354943,
+  "name": "Half Moon Bay",
+  "cod": 200
+}

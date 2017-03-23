@@ -1,0 +1,92 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="/static/vendor/angularjs/angular.js">
+    </script>
+
+    <script src="/static/js/mock_todo_list.js">
+    </script>
+
+    <script src="/static/js/todo_list_controller.js">
+    </script>
+
+    <script src="/static/js/app.js">
+    </script>
+
+    <style>
+      .completed label {
+        text-decoration: line-through;
+        color: grey;
+      }
+
+      #todo-list li {
+        list-style-image: none;
+        list-style-position: outside;
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Todo List Manager</h2>
+
+    <section ng-controller="TodoListController">
+
+    <div>
+      <!-- useful for debugging
+        <pre><code>{{todos | json}}</code></pre>
+      -->
+
+      <form
+        name="todo-list-form"
+        ng-submit="addTodo()"
+      >
+        <fieldset>
+          <legend ng-switch on="todos.length">
+            <span ng-switch-when="0">
+              Enter an item
+            </span>
+            <span ng-switch-default>
+              <ng-pluralize
+                count="unfinishedCount"
+                when="{'1': '{} item','other': '{} items'}"
+              >
+              </ng-pluralize>
+              left
+              ({{todos.length}} total)
+            </span>
+          </legend>
+
+          <input
+            name="new-todo"
+            type="text"
+            ng-model="newTodoText"
+            placeholder="What needs to be done?"
+        >
+          <input type="submit" value="add">
+
+  				<button type="button" ng-click="clearCompleted()" ng-show="todos.length">
+            Clear completed
+          </button>
+        </fieldset>
+      </form>
+
+      <ul id="todo-list">
+        <li
+          ng-repeat="todo in todos"
+          ng-class="{completed: todo.done}"
+        >
+
+            <label>
+              <input
+                type="checkbox"
+                ng-model="todo.done"
+                ng-change="toggleDone(todo)"
+            >
+              {{todo.text}}
+            </label>
+        </li>
+      </ul>
+
+    </section>
+  </body>
+</html>
